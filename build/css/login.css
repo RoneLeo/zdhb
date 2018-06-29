@@ -1,0 +1,290 @@
+/* start login.html */
+
+body {
+	width: 100%;
+	height: 600px;
+	overflow: hidden;
+}
+.bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+	background: url(production/images/part-login@2x.jpg) no-repeat;
+	background-size: cover;
+	overflow: hidden;
+}
+.page-index .container {
+	margin: 0 auto;
+	position: relative;
+	min-width: 960px;
+}
+video {
+	object-fit: contain;
+}
+.i_video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+}
+.section-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 80px;
+	z-index: 1000;
+	background-color: rgba(8,26,36,.7);
+}
+h1 {
+	width: 50%;
+	font-size: 32px;
+	font-weight: 400;
+	margin-left: 90px;
+	line-height: 60px;
+}
+.company-name {
+	padding-left: 12px;
+	letter-spacing: 5px;
+}
+.section-header .mod-header {
+	height: .8rem;
+	position: relative;
+	color: #fff;
+	/* font-family: "幼圆"; */
+}
+.mod-header {
+	margin: 0 auto;
+}
+.mod-tab-list {
+	position: absolute;
+	width: 50%;
+	top: 0;
+	right: 0;
+	min-width: 845px;
+}
+.mod-tab-list ul {
+	float: right;
+	list-style-type: none;
+}
+.mod-tab-list li {
+	float: left;
+	padding-right: 70px;
+	height: 80px;
+	line-height: 40px;
+}
+.mod-tab-list li:last-child {
+	padding-right: 100px;
+}
+li {
+	display: list-item;
+	text-align: -webkit-match-parent;
+}
+.mod-tab-list li a {
+	font-size: 18px;
+	color: #fff;
+	display: inline-block;
+	/* padding: 0 .25rem; */
+}
+.mod-header a {
+	text-decoration: none;
+}
+.mod-tab-list li a:hover {
+	color: #2980ff;
+}
+.section-main {
+	height: 100%;
+	z-index: 100;
+}
+.intro-wrapper {
+	/* max-width: 20rem; */
+	height: 100%;
+	margin: 0 auto;
+	z-index: 10;
+	position: relative;
+}
+.intro-detail {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+} 
+.intro-detail .detail-wrapper {
+	/* z-index: 10; */
+	position: absolute;
+	right: 10%;
+	top: 40%;
+	width: 70%;
+	height: 50%;
+    		/* -webkit-transform: translateY(-50%);
+    		-o-transform: translateY(-50%);
+    		-ms-transform: translateY(-50%); */
+    		/* transform: translateY(-50%); */
+}
+.title {
+	font-family: "微软雅黑";
+	font-size: 80px;
+	color: rgba(255, 255, 255, 1);
+	cursor: pointer;
+	height: 100%;
+}
+.detail {
+	font-family: "幼圆";
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 24px;
+}
+.title-tt {
+	margin-top: 30px;
+}
+.title-tt, .intro {
+	display: inline-block;
+	margin-left: 40px;
+}
+.title-tt>a {
+	color: rgba(255, 255, 255, 1);
+}
+/* 这里scale有问题 */
+.title-tt a:hover {
+	-moz-transform:scale(2,2); 
+	-webkit-transform:scale(2,2); 
+	-o-transform:scale(2,2);
+}
+.intro {
+	font-family: "幼圆";
+	font-size: 40px;
+	color: rgba(255, 255, 255, 1);
+	letter-spacing: 18px;
+}
+
+
+
+
+
+#loginBox{
+	z-index: 100;
+	width: 400px;
+	height: 330px;
+	background: white;
+	position: absolute;
+	top: 230px;
+	right: 200px;
+	border-radius: 5px;
+	background-color: rgba(7,58,79,0.5);
+}
+.loginContent{
+	/*display: none;*/
+	margin-top: 20px;
+}
+#login{
+	width: 280px;
+	height: 340px;
+	/*border: 1px solid #000;*/
+	margin: 35px auto;
+}
+.navLogin{
+	float: left;
+	height: 35px;
+	width: 100%;
+	font-size: 20px;
+	text-align: center;
+	line-height: 35px;
+	cursor: pointer;
+	color: rgba(255, 255, 255, 0.7);
+	letter-spacing: 5px;
+}
+.navLogin{
+	/* border-bottom: 3px solid rgba(8,26,41,0.8); */
+}
+.clear{
+	clear: both;
+}
+.loginCut{
+	/* margin-top: 40px; */
+	width: 100%;
+	height: 230px;
+}
+.incomBox{
+	height:60px;
+	width: 280px;
+	overflow: hidden;
+}
+.loginNameTab, .loginPwdTab{
+	height: 35px;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-radius: 3px;
+	float: left;
+}
+.incomBox:nth-child(1){
+	margin-top: 20px;
+}
+.userimages,.userIpt{
+	float: left;
+}
+.userIpt input{
+	color: #bfbfbf;
+	height: 28px;
+	width: 240px;
+	margin-left: 10px;
+	font-size: 16px;
+	outline: none;
+	border: none;
+	background-color: rgba(7,58,79,0.5);
+}
+.logoin_tool{
+	height: 35px;
+	-moz-user-select:none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+}
+.automaticLogoin{
+	color: #bfbfbf;
+	float: left;
+}
+.automaticLogoin>input,.automaticLogoin>label{
+	cursor: pointer;
+}
+.forget{
+	color: #bfbfbf;
+	float: right;
+	right: 5px;
+	cursor: pointer;
+}
+.forget>a {
+	color: #bfbfbf;
+}
+.forget>a:hover{
+	color:rgb(230,216,216);
+}
+.btn_logoin{
+	height: 45px;
+	width: 100%;
+	border: none;
+	background: rgba(8,26,41,0.5);
+	text-align: center;
+	line-height: 45px;
+	color:white;
+	font-size: 18px;
+	letter-spacing: 8px;
+	cursor: pointer;
+}
+.btn_logoin:hover{
+	background: rgba(8,26,41,0.8);
+}
+.pointText{
+	display: block;
+	width:100px;
+	margin-top: 40px;
+	margin-left:20px;
+	font-size: 12px;
+	color:red;
+	text-indent: 5px;
+	text-indent: 5px;
+	display: none;
+}
+
+/* end login.html */

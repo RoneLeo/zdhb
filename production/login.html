@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="../build/css/butify.min.css" rel="stylesheet">
+	<link href="../build/css/login.css" rel="stylesheet">
+</head>
+<body>
+	<div class="page-index bg">
+		<video class="i_video" autoplay="autoplay" loop="loop" src="http://qzonestyle.gtimg.cn/qz-proj/wy-pc-v2/static/img/web/top.webm"></video>
+		<!-- <video class="i_video" autoplay="autoplay" loop="loop" src="production/video/top.webm"></video> -->
+		<div class="container">
+			<div class="section-header">
+				<div class="mod-header">
+					<h1><i class="icon iconfont icon-leaf"></i><span class="company-name">大气网格化联动管控平台</span></h1>
+					<div class="mod-tab-list">
+						<ul>
+							<li><a href="index.html">首&nbsp页</a></li>
+							<li><a href="#">APP下载</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section-main">
+				<div class="intro-wrapper">
+					<div class="intro-detail">
+						<div class="detail-wrapper">
+							<div class="title">
+								<span class="title-tt"><a href="#">中丹环保</a></span>
+								<span class="intro ">产品简介</span>
+							</div>
+							<div class="detail">
+								<h3>就是真的好</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+		<div id="loginBox">
+			<div id="login">
+				<div class="navLogin">用户登录</div>
+				<!-- <div class="navReg">注册</div> -->
+				<div class="clear"></div>
+				<div class="loginCut">
+					<div class="loginContent">
+						<form>
+							<div class="incomBox">
+								<div class="logoinTab loginNameTab">
+									<!-- <div class="userImg"></div> -->
+									<div class="userIpt">
+										<input type="text" id="loginName" placeholder="账号"/>
+									</div>
+								</div>
+								<label class="pointText">用户名已存在！</label>
+							</div>
+							<div class="incomBox">
+								<div class="logoinTab loginPwdTab">
+									<!-- <div class="userImg pwdImg"></div> -->
+									<div class="userIpt">
+										<input type="text" id="loginPwd" placeholder="密码"/>
+									</div>
+								</div>
+								<label class="pointText">密码不正确！</label>
+							</div>
+							<div class="logoin_tool">
+								<div class="automaticLogoin">
+									<input type="checkbox" id="auLogoin" name="auLogoin" checked /><label for="auLogoin">自动登录</label>
+								</div>
+								<div class="forget"><a href="">忘记密码?&gt;&gt;</a></div>
+							</div>
+							<input type="button" class="btn_logoin" value="登录">
+							<!-- <p id="skipReg">还没账号？<a href="#" id="skip_Reg">去注册&gt;&gt;</a></p> -->
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="../vendors/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// function register(){
+			// 	$(".loginContent").css("display","none");
+			// 	$(".regContent").css("display","b,"none");
+			// 	$(".navReg").css("border-bottom","3lock");
+			// 	$(".navLogin").css("border-bottom"px solid rgba(8,26,41,0.8)");
+			// }
+			// function login(){
+			// 	$(".loginContent").css("display","block");
+			// 	$(".regContent").css("display","none");
+			// 	$(".navReg").css("border-bottom","none");
+			// 	$(".navLogin").css("border-bottom","3px solid rgba(8,26,41,0.8)");
+			// }
+			// $(".navReg").on("click",function(){
+			// 	register();
+			// });
+			// $("#skip_Reg").on("click",function(){
+			// 	register();
+			// });
+
+			// $(".navLogin").on("click",function(){
+			// 	login();
+			// });
+			// $("#skip_login").on("click",function(){
+			// 	login();
+			// });
+			// 
+			//两个输入框的焦点交互状态
+			$("#loginName").blur(function() {
+				$(".loginNameTab").css("border","1px solid rgba(255, 255, 255, 0.5)");
+			})
+			$("#loginName").focus(function() {
+				$(".loginNameTab").css("border","1px solid rgba(255, 255, 255, 0.9)");
+			});
+			$("#loginPwd").blur(function() {
+				$(".loginPwdTab").css("border","1px solid rgba(255, 255, 255, 0.5)");
+			})
+			$("#loginPwd").focus(function() {
+				$(".loginPwdTab").css("border","1px solid rgba(255, 255, 255, 0.9)");
+			});
+
+		});
+
+	</script>
+	
+</body>
+</html>

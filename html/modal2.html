@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>远程集中统一监测系统-用户供能监测</title>
+
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+	
+    <!-- bootstrap-progressbar -->
+    <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="#" class="site_title"><span>远程集中监测子系统</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <!--<img src="images/img.jpg" alt="..." class="img-circle profile_img">-->
+              </div>
+              <!--<div class="profile_info">
+                <span>Welcome,</span>
+                <h2>John Doe</h2>
+              </div>-->
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <!--<h3>General</h3>-->
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-bar-chart-o"></i> 能源站监测 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="modal1.html">能源站状态监测</a></li>
+                      <li  class="active"><a href="modal2.html">供能数据监测</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-bar-chart-o"></i> 用户供能监测 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="#">用户信息管理</a></li>
+                      <li><a href="#">能源需求管理</a></li>
+                      <li><a href="#">用户供能监测</a></li>
+                      <li><a href="#">用户实际能耗</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-desktop"></i> 管网管沟监测 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="#">输配监测</a></li>
+                      <li><a href="#">沉降监测</a></li>
+                      <li><a href="#">水质监测</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-table"></i> 报警报障 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="#">数据实时采集</a></li>
+                      <li><a href="#">通知策略配置</a></li>
+                      <li><a href="#">同时及时推送</a></li>
+                      <li><a href="#">历史数据查询</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a><i class="fa fa-bar-chart-o"></i> 操作日志 <span class="fa fa-chevron-down"></span></a>
+                    <!--<ul class="nav child_menu">
+                      <li><a href="chartjs.html">Chart JS</a></li>
+                      <li><a href="chartjs2.html">Chart JS2</a></li>
+                      <li><a href="morisjs.html">Moris JS</a></li>
+                      <li><a href="echarts.html">ECharts</a></li>
+                      <li><a href="other_charts.html">Other Charts</a></li>
+                    </ul>-->
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="images/img.jpg" alt="">系统管理员
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a href="javascript:;"> Profile</a></li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="badge bg-red pull-right">50%</span>
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                    <li><a href="javascript:;">Help</a></li>
+                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                  </ul>
+                </li>
+
+                <li role="presentation" class="dropdown">
+                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-envelope-o"></i>
+                    <span class="badge bg-green">6</span>
+                  </a>
+                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="text-center">
+                        <a>
+                          <strong>See All Alerts</strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col clearfix" role="main">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>设备检测 <small>各项检测指标</small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Settings 1</a>
+                      </li>
+                      <li><a href="#">Settings 2</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+
+                <table class="table table-striped">
+                  <tbody>
+                  <tr>
+                    <td>运行状态: <strong>开</strong></td>
+                    <td>故障: <strong>-</strong></td>
+                    <td>故障类型 <strong>-</strong></td>
+                    <td>电池电压: <strong>12V</strong> </td>
+                  </tr>
+                  <tr>
+                    <td>运行模式: <strong>极速</strong></td>
+                    <td>反向无功电度: <strong>5</strong></td>
+                    <td>正向无功电路: <strong>开</strong></td>
+                    <td>总网无功功率: <strong>20W</strong></td>
+                  </tr>
+                  <tr>
+                    <td>反向有功电路: <strong>回路</strong></td>
+                    <td>总功率因素: <strong>-</strong></td>
+                    <td>模式: <strong>正常</strong></td>
+                    <td>入口温度: <strong>56℃</strong></td>
+                  </tr>
+                  <tr>
+                    <td>功率百分比: <strong>50%</strong> </td>
+                    <td>平均电压:  <strong>15V</strong> </td>
+                    <td>平均速度: <strong>38nP/s</strong> </td>
+                    <td>平均线电压: <strong>44V</strong> </td>
+                  </tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>阀门状态</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Settings 1</a>
+                      </li>
+                      <li><a href="#">Settings 2</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+
+                <table class="table table-striped">
+                  <thead>
+                  <tr>
+                    <th>设备</th>
+                    <th>运行</th>
+                    <th>故障</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>1号机组阀门</td>
+                    <td><i class="fa fa-circle"></i></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>2号机组阀门</td>
+                    <td><i class="fa fa-circle"></i></td>
+                    <td><i class="fa fa-circle-o"></i></td>
+                  </tr>
+                  <tr>
+                    <td>3号机组阀门</td>
+                    <td><i class="fa fa-circle"></i></td>
+                    <td></td>
+                  </tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>冷水塔状态</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Settings 1</a>
+                      </li>
+                      <li><a href="#">Settings 2</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+
+                <table class="table table-striped">
+                  <thead>
+                  <tr>
+                    <th>设备</th>
+                    <th>运行</th>
+                    <th>故障</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>1号机冷水塔</td>
+                    <td><i class="fa fa-circle"></i></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>2号机冷水塔</td>
+                    <td><i class="fa fa-circle"></i></td>
+                    <td><i class="fa fa-circle-o"></i></td>
+                  </tr>
+                  <tr>
+                    <td>3号机冷水塔</td>
+                    <td><i class="fa fa-circle"></i></td>
+                    <td></td>
+                  </tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>冷水水泵</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Settings 1</a>
+                      </li>
+                      <li><a href="#">Settings 2</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+
+                <table class="table table-striped">
+                  <thead>
+                  <tr>
+                    <th>设备</th>
+                    <th>运行</th>
+                    <th>故障</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>1号水泵</td>
+                    <td><i class="fa fa-circle"></i></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>2号水泵</td>
+                    <td><i class="fa fa-circle"></i></td>
+                    <td><i class="fa fa-circle-o"></i></td>
+                  </tr>
+                  <tr>
+                    <td>3号水泵</td>
+                    <td><i class="fa fa-circle"></i></td>
+                    <td></td>
+                  </tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12"></div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>供热/供冷实时数据</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Settings 1</a>
+                      </li>
+                      <li><a href="#">Settings 2</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+
+                <div id="mainb2" style="height:350px;"></div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>历史趋势 <small>近一小时温度变化</small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Settings 1</a>
+                      </li>
+                      <li><a href="#">Settings 2</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+
+                <div id="echart_line2" style="height:350px;"></div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+      <!-- jQuery -->
+      <script src="../vendors/jquery/dist/jquery.min.js"></script>
+      <!-- Bootstrap -->
+      <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+      <!-- FastClick -->
+      <script src="../vendors/fastclick/lib/fastclick.js"></script>
+      <!-- NProgress -->
+      <script src="../vendors/nprogress/nprogress.js"></script>
+      <!-- ECharts -->
+      <script src="../vendors/echarts/dist/echarts.min.js"></script>
+      <script src="../vendors/echarts/map/js/world.js"></script>
+
+      <!-- Custom Theme Scripts -->
+      <script src="../build/js/custom.js"></script>
+      <script>
+          mainb2();
+          line()
+
+
+function mainb2() {
+    var theme = {
+        color: [
+            '#f15f75', '#64bfff', '#BDC3C7', '#3498DB',
+            '#9B59B6', '#8abb6f', '#759c6a', '#bfd3b7'
+        ]
+    };
+    var echartBar = echarts.init(document.getElementById('mainb2'), theme);
+
+    echartBar.setOption({
+        title: {
+            text: '',
+            subtext: ''
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data: ['供水温度', '回水温度']
+        },
+        toolbox: {
+            show: false
+        },
+        calculable: false,
+        xAxis: [{
+            type: 'category',
+            data: ['申虹一号', '申虹二号', '申虹三号', '同济医院', '仁济医院', '其他单位1', '其他单位1', '其他单位1', '其他单位1', '其他单位1', '其他单位1', '其他单位1']
+        }],
+        yAxis: [{
+            type: 'value'
+        }],
+        series: [{
+            name: '供水温度',
+            type: 'bar',
+            data: [62.0, 64.9, 67.0, 63.2, 75.6, 76.7, 55.6, 62.2, 72.6, 60.0, 56.4, 63.3],
+            markPoint: {
+                data: [{
+                    type: 'max',
+                    name: '最高温度'
+                }, {
+                    type: 'min',
+                    name: '最低温度'
+                }]
+            }
+        }, {
+            name: '回水温度',
+            type: 'bar',
+            data: [52.6, 45.9, 59.0, 56.4, 58.7, 40.7, 45.6, 50.2, 48.7, 58.8, 46.0, 52.3],
+            markPoint: {
+                data: [{
+                    name: 'sales',
+                    value: 182.2,
+                    xAxis: 7,
+                    yAxis: 183,
+                }]
+            }
+        }]
+    });
+
+}
+
+          function line() {
+              var theme = {
+                  color: [
+                      '#f14552', '#24ceff', '#BDC3C7', '#3498DB',
+                      '#9B59B6', '#8abb6f', '#759c6a', '#bfd3b7'
+                  ]
+              };
+              var echartLine = echarts.init(document.getElementById('echart_line2'), theme);
+
+              echartLine.setOption({
+                  title: {
+                      text: '',
+                      subtext: ''
+                  },
+                  tooltip: {
+                      trigger: 'axis'
+                  },
+                  legend: {
+                      x: 220,
+                      y: 40,
+                      data: ['供水温度', '供热温度']
+                  },
+                  toolbox: {
+                      show: true,
+                      feature: {
+                          magicType: {
+                              show: true,
+                              title: {
+                                  line: 'Line',
+                                  bar: 'Bar',
+                                  stack: 'Stack',
+                                  tiled: 'Tiled'
+                              },
+                              type: ['line', 'bar', 'stack', 'tiled']
+                          },
+                          restore: {
+                              show: true,
+                              title: "Restore"
+                          },
+                          saveAsImage: {
+                              show: true,
+                              title: "Save Image"
+                          }
+                      }
+                  },
+                  calculable: true,
+                  xAxis: [{
+                      type: 'category',
+                      boundaryGap: false,
+                      data: ['12:00', '12:10', '12:20', '12:30', '12:40', '12:50', '13:00']
+                  }],
+                  yAxis: [{
+                      type: 'value'
+                  }],
+                  series: [{
+                      name: '供水温度',
+                      type: 'line',
+                      smooth: true,
+                      itemStyle: {
+                          normal: {
+                              areaStyle: {
+                                  type: 'default'
+                              }
+                          }
+                      },
+                      data: [58, 56, 52, 61, 58, 63, 51]
+                  }, {
+                      name: '供热温度',
+                      type: 'line',
+                      smooth: true,
+                      itemStyle: {
+                          normal: {
+                              areaStyle: {
+                                  type: 'default'
+                              }
+                          }
+                      },
+                      data: [48, 49, 50, 55, 54, 49, 43]
+                  }]
+              });
+
+          }
+
+
+      </script>
+	
+  </body>
+</html>
