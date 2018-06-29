@@ -1163,7 +1163,7 @@ h2 {
 	width: 100%;
 	padding: 10px 17px;
 	display: inline-block;
-	background: #fff;
+	background: #E1F4F8;
 	border: 1px solid #E6E9ED;
 	-webkit-column-break-inside: avoid;
 	-moz-column-break-inside: avoid;
@@ -4708,6 +4708,7 @@ ul.notifications {
   url('iconfont.svg?t=1530088348216#iconfont') format('svg'); /* iOS 4.1- */
 }
 
+
 .iconfont {
   font-family:"iconfont" !important;
   font-size:16px;
@@ -4715,6 +4716,8 @@ ul.notifications {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.icon-position-active:before { content: "\e6fa"; }
 
 .icon-help:before { content: "\e600"; }
 
@@ -4794,6 +4797,9 @@ ul.notifications {
 #two_echart_pies>canvas {
 	width: 100%;
 }
+.index_table {
+	background-color: #fff;
+}
 
 .index_table>tr {
 	padding-top: 4px;
@@ -4802,7 +4808,8 @@ ul.notifications {
 
 .index_table>thead {
 	font-size: 12px;
-	font-weight: 100;
+	font-eight: 100;
 	background-color: rgba(42, 63, 84, 0.9);
 	color: rgba(255, 255, 255, 0.8)
 }
+

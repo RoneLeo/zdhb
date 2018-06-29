@@ -17,11 +17,12 @@
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-	
+    <!-- jQuery custom content scroller -->
+	 <link href="../vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
     <!-- bootstrap-progressbar -->
     <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
-    <!--<link href="../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>-->
+    <link href="../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
     <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
@@ -32,7 +33,7 @@
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
-        <div class="col-md-3 left_col">
+        <div class="col-md-3 left_col menu_fixed">
           <div class="left_col scroll-view" >
             <div class="navbar nav_title" style="border: 0;">
               <a href="index.html" class="site_title"><i class="glyphicon glyphicon-grain" aria-hidden="true"></i><span class="ZDHB">ZDHB</span><span >中丹环保</span></a>
@@ -299,7 +300,7 @@
             <div class="col-md-6 col-sm-5 col-xs-12">
               <div class="x_panel tile fixed_height_250">
                 <span class="panel_tt title2">企业管控</span>
-                <div class="x_content" style="height: 100%;">
+                <div class="x_content" style="position: relative; height: 100%;">
                   <canvas id="coporate_ChartJS_bar"></canvas>
                 </div>
               </div>
@@ -308,7 +309,7 @@
             <div class="col-md-6 col-sm-6 col-xs-12">
               <div class="x_panel tile fixed_height_250">
                 <span class="panel_tt title2">工地管控</span>
-                <div class="x_content" style="height: 100%;">
+                <div class="x_content" style="position: relative;height: 100%;">
                   <canvas id="site_ChartJS_line"></canvas>
                 </div>
               </div>
@@ -394,11 +395,13 @@
     <!-- echarts -->
     <script src="../vendors/echarts/dist/echarts.min.js"></script>
     
+    <!-- jQuery custom content scroller -->
+    <script src="../vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 
     <!-- 高德maps -->
-    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.6&key=93c0d23555a4d6334b234bd881ef16a2"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.6&key=93c0d23555a4d6334b234bd881ef16a2"></script>
     <!-- UI组件库 1.0 -->
-    <script src="https://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+    <script src="http://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
 
 
     <!-- 首页各个图表js -->
@@ -409,11 +412,46 @@
       var map = new AMap.Map('index_map_container', {
         zoom: 11,
         cursor: 'default',
-        center: [104.07, 30.67],
+        center: [104.012493, 30.636921],
         mapStyle: 'amap://styles/normal'
       });
 
+      map.on('click', function(e) {
+        console.log(e.lnglat.getLng() + ' ' +e.lnglat.getLat());
+      });
 
+      //在高德地图上绘制awesonIcon图标
+      AMapUI.loadUI(['overlay/AwesomeMarker'],
+        function(AwesomeMarker) {
+
+          var positions = [
+          [103.963742, 30.597329],
+          [103.972153, 30.573094],
+          [103.974728, 30.570285],
+          [103.97181, 30.560826],
+          [103.977818, 30.547669],
+          [103.981594, 30.539242],
+          [103.956189, 30.545156],
+          [103.956532, 30.555504]
+          ];
+
+          for (var i = 0, len = positions.length; i < len; i++) {
+            new AwesomeMarker({
+              awesomeIcon: 'asterisk',
+              iconLabel: {
+                style: {
+                  color: '#333',
+                  fontSize: '14px'
+                }
+              },
+              iconStyle: 'orange',
+              map: map,
+              position: positions[i],
+              title: 'awesomeIcon :asterisk'
+            });
+          }
+        }
+      );
     </script>
 
 
