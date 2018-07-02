@@ -114,7 +114,7 @@ var cityPieOption = {
     name: "3",
     type: "pie",
     clockWise: !1,
-    radius: [5, 45],
+    radius: [0, 45],
     center : ['40%', '50%'],
     label: {
       normal: {
