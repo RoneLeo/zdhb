@@ -3,6 +3,9 @@ window.addEventListener("resize", function () {
   cityPie.resize();
   simpleBar.resize();
   airBar.resize();
+  siteLine.resize();
+  coporateBar.resize();
+  twoPies.resize();
 });
 
 var cityPie = echarts.init(document.getElementById("city_mini_pie"));
