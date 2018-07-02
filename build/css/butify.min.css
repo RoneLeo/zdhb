@@ -383,7 +383,7 @@
 	float: left;
 /* 	background: #EDEDED;
 	border-bottom: 1px solid #D9DEE4; */
-	margin-bottom: 10px;
+	/* margin-bottom: 10px; */
 	width: 100%;
 	position: relative;
 	color: #fff;
@@ -617,7 +617,7 @@ body {
 }
 
 .page-title .title_right .pull-right {
-	margin: 10px 0
+	margin: 10px 0;
 }
 
 .fixed_height_320 {
@@ -1005,7 +1005,7 @@ a {
 }
 
 footer {
-	background: #fff;
+	background: rgba(10, 4, 8, 0.5); 
 	padding: 15px 20px;
 	display: block;
 	font-size: 14px;
@@ -1180,7 +1180,7 @@ h2 {
 	column-break-inside: avoid;
 	opacity: 1;
 	transition: all .2s ease;
-	border-radius: 8px;
+	border-radius: 3px;
 }
 
 .x_title {
@@ -4699,6 +4699,8 @@ ul.notifications {
 .notice {
 	padding-bottom: 5px;
 	font-size: 14px;
+	display: block;
+	margin-top: 30px;
 	/* color: #717476; */
 	color: rgba(255, 255, 255, 0.8);
 }
@@ -4718,6 +4720,9 @@ ul.notifications {
 	margin-left: 0px;
 }
 
+.copyright {
+	color: rgba(255, 255, 255, .8);
+}
 
 
 /* start iconfont.css */

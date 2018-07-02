@@ -389,68 +389,205 @@ var option4 = {
 };
 twoPies.setOption(option4, true);
 
-var siteLine = document.getElementById("site_ChartJS_line");
-new Chart(siteLine, {
-  type: "line",
-  data: {
-    labels: ["1", "2", "3", "4", "5", "5", "7"],
-    datasets: [{
-      label: "工地数量",
-      backgroundColor: "rgba(38,185,154,0.9)",
-      borderColor: "rgba(38,185,154,0.3)",
-      pointBorderColor: "rgba(38, 185, 154, 0.7)",
-      pointBackgroundColor: "rgba(38, 185, 154, 0.7)",
-      pointHoverBackgroundColor: "#fff",
-      pointHoverBorderColor: "rgba(220,220,220,1)",
-      pointBorderWidth: 1,
-      data: [31, 74, 6, 39, 20, 85, 7]
-    }, {
-      label: "超排次数",
-      backgroundColor: "rgba(42,63,84,0.9)",
-      borderColor: "rgba(42,63,84,0.3)",
-      pointBorderColor: "rgba(3, 88, 106, 0.70)",
-      pointBackgroundColor: "rgba(3, 88, 106, 0.70)",
-      pointHoverBackgroundColor: "#fff",
-      pointHoverBorderColor: "rgba(151,187,205,1)",
-      pointBorderWidth: 1,
-      data: [82, 23, 66, 9, 99, 4, 2]
-    }]
-  }
-});
-
-var coporateBar = document.getElementById("coporate_ChartJS_bar");
-new Chart(coporateBar, {
-  type: "bar",
-  data: {
-    labels: ["1", "2", "3", "4", "5", "6", "7"],
-    datasets: [{
-      label: "企业数量",
-      backgroundColor: "#26B99A",
-      data: [51, 30, 40, 28, 92, 50, 45]
-    }, {
-      label: "超排次数",
-      backgroundColor: "#2A3F54",
-      data: [41, 56, 25, 48, 72, 34, 12]
-    }]
+var siteLine = echarts.init(document.getElementById("site_echarts_line"));
+siteLine.setOption(option = {
+  tooltip : {
+    trigger: 'axis'
   },
-  options: {
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: !0
-        }
-      }]
+  legend: {
+    textStyle: {
+      fontSize: 10
     },
-    layout: {
-      padding: {
-        left: 0,
-        right: 0,
-        top: 0,
-        bottom: 50
-      }
+    x: 'left',
+    data:['工地数量','超排次数']
+  },
+  toolbox: {
+    show : true,
+    feature : {
+      dataView : {show: true, readOnly: false},
+      magicType : {show: true, type: ['line', 'bar']},
+      restore : {show: true},
+      saveAsImage : {show: true}
     }
+  },
+  calculable : true,
+  xAxis : [
+  {
+    type : 'category',
+    boundaryGap : false,
+    // axisLabel: {
+    //   show: true,
+    //   textStyle: {
+    //     color: '#ccc',
+    //     fontSize: 16
+    //   }
+    // },
+    data : ['周一','周二','周三','周四','周五','周六','周日']
   }
-});
+  ],
+  yAxis : [
+  {
+    type : 'value',
+    splitNumber: 8
+  }
+  ],
+  series : [
+  {
+    name:'工地数量',
+    type:'line',
+    smooth:true,
+    itemStyle: {normal: {areaStyle: {type: '#26B99A'},
+    color:'#26B99A'}},
+    data:[10, 12, 11, 11, 13, 12, 10]
+  },
+  {
+    name:'超排次数',
+    type:'line',
+    smooth:true,
+    itemStyle: {normal: {areaStyle: {type: '#3E5164'},
+      color:'#3E5164'}},
+      data:[30, 10, 20, 31, 39, 30, 10]
+    }
+
+    ]
+  }
+  , true);
+
+
+var coporateBar = echarts.init(document.getElementById("coporate_echarts_bar"));
+coporateBar.setOption(option = {
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    toolbox: {
+    show : true,
+    feature : {
+      dataView : {show: true, readOnly: false},
+      magicType : {show: true, type: ['line', 'bar']},
+      restore : {show: true},
+      saveAsImage : {show: true}
+    }
+  },
+    legend: {
+      x: 'left',
+        data: ['企业数量', '超排次数']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    yAxis: {
+        type: 'value'
+        // boundaryGap: [0, 0.01]
+    },
+    xAxis: {
+        type: 'category',
+        data: ['周一','周二','周三','周四','周五','周六','周七']
+    },
+    series: [
+        {
+            name: '企业数量',
+            type: 'bar',
+            itemStyle: {
+              normal: {
+                color: '#2A3F54'
+              }
+            },
+            data: [182, 234, 290, 104, 131, 630,563]
+        },
+        {
+            name: '超排次数',
+            type: 'bar',
+            itemStyle: {
+              normal: {
+                color: '#26B99A'
+              }
+            },
+            data: [193, 234, 310, 121, 131, 681,456]
+        }
+    
+    ]
+}
+  , true);
+
+// var $coporate_bar_width = $(".coporate_bar").width();
+// var $coporate_bar_height = $(".coporate_bar").height();
+// console.log($coporate_bar_width + " " + $coporate_bar_height);
+// $(".coporate_bar>canvas").width($coporate_bar_width);
+// $(".coporate_bar>canvas").height($coporate_bar_height);
+
+// var canvasWidth = $(".coporate_bar>canvas").width();
+// var canvasHeight = $(".coporate_bar>canvas").height();
+
+// console.log(canvasWidth + ' ' + canvasHeight);
+
+// var siteLine = document.getElementById("site_ChartJS_line");
+// new Chart(siteLine, {
+//   type: "line",
+//   data: {
+//     labels: ["1", "2", "3", "4", "5", "5", "7"],
+//     datasets: [{
+//       label: "工地数量",
+//       backgroundColor: "rgba(38,185,154,0.9)",
+//       borderColor: "rgba(38,185,154,0.3)",
+//       pointBorderColor: "rgba(38, 185, 154, 0.7)",
+//       pointBackgroundColor: "rgba(38, 185, 154, 0.7)",
+//       pointHoverBackgroundColor: "#fff",
+//       pointHoverBorderColor: "rgba(220,220,220,1)",
+//       pointBorderWidth: 1,
+//       data: [31, 74, 6, 39, 20, 85, 7]
+//     }, {
+//       label: "超排次数",
+//       backgroundColor: "rgba(42,63,84,0.9)",
+//       borderColor: "rgba(42,63,84,0.3)",
+//       pointBorderColor: "rgba(3, 88, 106, 0.70)",
+//       pointBackgroundColor: "rgba(3, 88, 106, 0.70)",
+//       pointHoverBackgroundColor: "#fff",
+//       pointHoverBorderColor: "rgba(151,187,205,1)",
+//       pointBorderWidth: 1,
+//       data: [82, 23, 66, 9, 99, 4, 2]
+//     }]
+//   }
+// });
+
+// var coporateBar = document.getElementById("coporate_ChartJS_bar");
+// new Chart(coporateBar, {
+//   type: "bar",
+//   data: {
+//     labels: ["1", "2", "3", "4", "5", "6", "7"],
+//     datasets: [{
+//       label: "企业数量",
+//       backgroundColor: "#26B99A",
+//       data: [51, 30, 40, 28, 92, 50, 45]
+//     }, {
+//       label: "超排次数",
+//       backgroundColor: "#2A3F54",
+//       data: [41, 56, 25, 48, 72, 34, 12]
+//     }]
+//   },
+//   options: {
+//     scales: {
+//       yAxes: [{
+//         ticks: {
+//           beginAtZero: !0
+//         }
+//       }]
+//     },
+//     layout: {
+//       padding: {
+//         left: 0,
+//         right: 0,
+//         top: 0,
+//         bottom: 50
+//       }
+//     }
+//   }
+// });
 
 
 
