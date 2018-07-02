@@ -198,9 +198,14 @@
 	z-index: 2
 }
 
+.right_col {
+	background:url('images/index-bg3.jpg') repeat;
+}
+
 .nav-sm .navbar.nav_title {
 	width: 70px
 }
+
 
 .nav-sm .navbar.nav_title a span {
 	display: none
@@ -376,11 +381,12 @@
 
 .nav_menu {
 	float: left;
-	background: #EDEDED;
-	border-bottom: 1px solid #D9DEE4;
+/* 	background: #EDEDED;
+	border-bottom: 1px solid #D9DEE4; */
 	margin-bottom: 10px;
 	width: 100%;
-	position: relative
+	position: relative;
+	color: #fff;
 }
 
 @media (min-width:480px) {
@@ -564,6 +570,10 @@ body .container.body .right_col {
 
 .top_nav .nav .open>a,.top_nav .nav .open>a:focus,.top_nav .nav .open>a:hover,.top_nav .nav>li>a:focus,.top_nav .nav>li>a:hover {
 	background: #D9DEE4
+}
+
+.top_nav .nav>li>a:focus,.top_nav .nav>li>a:hover {
+	background-color: rgba(52,45,39, 1.0);
 }
 
 body {
@@ -897,7 +907,7 @@ a {
 }
 
 .nav.navbar-nav>li>a {
-	color: #515356!important
+	/* color: #515356!important */
 }
 
 .nav.top_menu>li>a {
@@ -1169,7 +1179,8 @@ h2 {
 	-moz-column-break-inside: avoid;
 	column-break-inside: avoid;
 	opacity: 1;
-	transition: all .2s ease
+	transition: all .2s ease;
+	border-radius: 8px;
 }
 
 .x_title {
@@ -4687,7 +4698,9 @@ ul.notifications {
 
 .notice {
 	padding-bottom: 5px;
-	color: #717476;
+	font-size: 14px;
+	/* color: #717476; */
+	color: rgba(255, 255, 255, 0.8);
 }
 .panel_tt {
 	font-size: 18px;
@@ -4697,6 +4710,14 @@ ul.notifications {
 .ZDHB {
 	padding: 5px 5px;
 }
+
+.system-name-text {
+	display: inline-block; 
+	padding-top: 7px; 
+	font-weight: 3;
+	margin-left: 0px;
+}
+
 
 
 /* start iconfont.css */

@@ -1,3 +1,10 @@
+// echart自适应
+window.addEventListener("resize", function () {
+  cityPie.resize();
+  simpleBar.resize();
+  airBar.resize();
+});
+
 var cityPie = echarts.init(document.getElementById("city_mini_pie"));
 var cityPieOption = {
   tooltip: {
@@ -114,7 +121,7 @@ var cityPieOption = {
     name: "3",
     type: "pie",
     clockWise: !1,
-    radius: [0, 45],
+    radius: [5, 45],
     center : ['40%', '50%'],
     label: {
       normal: {
